@@ -19,6 +19,24 @@
   }
 }
 
+@layer utilities {
+  @keyframes smooth-bounce {
+    0%, 100% {
+      transform: translateY(0); /* Start and End on the ground */
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-25%); /* Jump up in the middle */
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-bounce-4 {
+    animation: smooth-bounce 1s; /* Run the animation defined above */
+    animation-iteration-count: 4; /* Run exactly 4 times */
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
