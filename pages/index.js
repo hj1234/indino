@@ -56,8 +56,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="h-screen w-full bg-slate-900 text-white flex flex-col overflow-hidden relative font-sans">
-      
+    <main className="h-[100dvh] w-full bg-slate-900 text-white flex flex-col overflow-hidden relative font-sans">
       {/* HEADER */}
       <header className="absolute top-0 left-0 w-full z-50 py-6 flex justify-center pointer-events-none">
         <div className="text-center animate-bounce-slow pointer-events-auto">
@@ -76,7 +75,7 @@ export default function Home() {
       <div className="flex-grow overflow-y-auto snap-y snap-mandatory scroll-smooth no-scrollbar">
         
         {/* SECTION 1: COUNTER */}
-        <section className="h-screen w-full flex flex-col items-center justify-center snap-center relative p-4">
+        <section className="h-[100dvh] w-full flex flex-col items-center justify-center snap-center relative p-4">
            <div className="text-center space-y-6 -mt-12">
             <h2 className="text-sm font-semibold text-indigo-200 uppercase tracking-widest bg-indigo-950/50 py-2 px-4 rounded-full border border-indigo-500/30">
               Indigo Daily Flight Cancellations
@@ -118,8 +117,8 @@ export default function Home() {
 
         {/* SECTION 2: CHART (Target for scroll) */}
         <section 
-          ref={chartRef} // 4. Attach Ref Here
-          className="h-screen w-full flex flex-col items-center justify-center snap-center bg-slate-900/50 p-4 md:p-12 relative"
+          ref={chartRef}
+          className="h-[100dvh] w-full flex flex-col items-center justify-center snap-center bg-slate-900/50 p-4 md:p-12 relative"
         >
           {data && data.history ? (
              <CancellationChart history={data.history} />
@@ -131,7 +130,7 @@ export default function Home() {
       </div>
 
       {/* FOOTER */}
-      <footer className="absolute bottom-0 left-0 w-full py-4 text-center pointer-events-none z-50">
+      <footer className="absolute bottom-0 left-0 w-full py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] text-center pointer-events-none z-50">
         <div className="text-[10px] text-slate-600 max-w-md mx-auto px-4 pointer-events-auto bg-slate-900/80 backdrop-blur-md rounded-full py-1">
           Not affiliated with IndiGo. Data scraped from public records.
           <br/>
